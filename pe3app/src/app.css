@@ -1,0 +1,229 @@
+/* Global Styles */
+body {
+    background-color: #ffffff;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: black;
+    padding: 1rem;
+    border-bottom: 1px solid #ffffff;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 
+   Normale Buttons:
+   - Hover: schwarz + weißer Text
+*/
+button {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #ffffff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: scale(1.02);
+}
+
+/* Leichter Klick-Effekt */
+button:active {
+    background-color: #333;
+    transform: scale(0.98);
+}
+
+/* Home-Button bleibt (falls gewünscht) beim alten Effekt */
+.home-button {
+    background: none;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
+.home-button:hover {
+    text-decoration: underline;
+    /* Falls du auch hier Schwarz haben willst,
+       kannst du stattdessen dieselben Hover-Eigenschaften wie „button:hover“ hinzufügen */
+}
+
+/* Main Styles */
+main {
+    padding: 2rem;
+}
+
+.image-generator {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.image-generator input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: #ffffff;
+}
+
+/* Generiertes Bild in 512px */
+.generated-image img {
+    width: 512px;
+    height: 512px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+}
+
+/* ======= Bereinigte Recents Section ======= */
+.recents-container {
+    display: grid;
+    /* Hier für größere Kacheln min. 300px oder 350px wählen */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+    max-height: 80vh; /* Oder weglassen, falls du endlos scrollen willst */
+   
+    padding: 1rem;
+}
+
+.recent-item {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Maximale Bildhöhe und Objektfüllung */
+.recent-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.recent-item p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: black;
+}
+
+/* Optional: Falls du woanders .image-preview nutzt */
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+}
+
+/********************************************
+ *  RANGE SLIDER STYLING (Black track + rect thumb)
+ ********************************************/
+
+input[type="range"] {
+    -webkit-appearance: none; /* Entfernt Standard-Look in WebKit */
+    width: 100%;
+    background: black; /* Schwarze Leiste */
+    height: 4px;       /* Höhe der Leiste */
+    cursor: pointer;
+    margin: 0.5rem 0;
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    background: black;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: black;
+    width: 5px;
+    height: 20px;
+    margin-top: -8px; /* Zentriert den Thumb auf der Leiste */
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+    background: black;
+    height: 4px;
+    border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: black;
+    width: 10px;
+    height: 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* IE/Edge (ältere Versionen) */
+input[type="range"]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 4px;
+}
+input[type="range"]::-ms-fill-lower {
+    background: black;
+}
+input[type="range"]::-ms-fill-upper {
+    background: black;
+}
+input[type="range"]::-ms-thumb {
+    background: black;
+    width: 10px;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+/* ================= New Classes for Attributes ================= */
+.attribute-row {
+    display: flex;
+    justify-content: space-between; /* Label links, Wert rechts */
+    margin-top: 0.5rem;
+}
+
+.attr-label {
+    text-align: center;
+    font-weight: bold;
+}
+
+.attr-value {
+    text-align: center;
+}
